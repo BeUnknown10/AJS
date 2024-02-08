@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS CRUD Application for users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+</head>
+<body ng-app="userApp" ng-controller="UserController">
+    <center>
+    <h1>User Management</h1>
+    <table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tr ng-repeat="user1 in users">
+        <td>{{user1.name}}</td>
+        <td>{{user1.email}}</td>
+        <td>
+            <button ng-click="editUser(user1)">Edit</button>
+            <button ng-click="deleteUser(user1)">Delete</button>
+        </td>
+    </tr>
+</table>
+<hr>
+<h2>Create Users</h2>
+<input type="text" ng-model="newUser.name" placeholder="Name">
+<input type="email" ng-model="newUser.email" placeholder="Email">
+<button ng-click="createUser()">Create</button>
+<hr>
+
+<h2>Edit User</h2>
+<input type="text" ng-model="editedUser.name" placeholder="Name">
+<input type="email" ng-model="editedUser.email" placeholder="Email">
+<button ng-click="updateUser()">Update</button>
+
+
+<script src="p7.js"></script>
+</center>
+</body>
+</html>

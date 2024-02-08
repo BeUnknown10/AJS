@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Student Details</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="StudentController as ctrl">
+  <h2>Student Details</h2>
+
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>CGPA</th>
+    </tr>
+    <tr ng-repeat="student in ctrl.students">
+      <td>{{ student.name | uppercase }}</td>
+      <td>{{ student.cgpa | number:2 }}</td>
+    </tr>
+  </table>
+
+</div>
+
+<script src="p11.js"></script>
+
+</body>
+</html>
